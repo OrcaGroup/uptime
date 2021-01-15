@@ -48,25 +48,61 @@
       <div class="container px-8 mt-1 mb-16 mx-auto w-full pt-16 pb-16">
          <div class="md:grid md:grid-cols-2">
             <div class="mt-2">
-               <p class="font-quicksand text-3xl text-white">Add Monitor</p>
+               <p class="font-quicksand text-3xl text-white">Welcome <a class="text-green-400"><%=user.username%></a>!</p>
             </div>
          </div>
          <div class="border-b border-gray-800 mt-2"></div>
-         <br>  
-         <div class="mx-auto p-6 rounded-lg bg-discord-dark-800" style="background-color:#1b2435">
-            <p class="text-md font-quicksand">Monitor Link</p>
-            <form method="POST" action="/add">
-               <input type="url" name="link" id="link" class="mt-2 input-1 px-3 focus:border rounded-md py-3 w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5" placeholder="https://" style="background-color:#131a26;" required>
-               <!--<p class="mt-4 text-md font-quicksand">Request Time (ms) <a class="text-1xl mt-2 text-gray-500 font-quicksand">required 2000</a></p>
-                  <input type="text" class="mt-2 input-1 px-3 focus:border bg-discord-dark-900 rounded-md py-3 w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5" placeholder="20000" style="background-color:#131a26;" disabled>-->
-               <div class="col-span-2">
-                  <center>
-                     <button type="submit" class="bg-green-400 focus:outline-none mt-7 hover:bg-green-500 transition duration-500 px-5 py-3 rounded-md text-center font-quicksand">Add Monitor</button>
-                  </center>
+         <div class="md:grid md:grid-cols-3 mt-1">
+            <div class="mt-10 min-w-0 shadow-xs overflow-hidden" style="background-color:#1b2435">
+               <div class="p-4 flex items-center">
+                  <div class="p-3 rounded-full text-white text-4xl mr-4">
+                     <i class="fal fa-link"></i>
+                  </div>
+                  <div>
+                     <p class="mb-2 text-sm font-medium text-white" style="font-size: 20px">
+                        Added Monitors
+                     </p>
+                     <p class="text-lg font-semibold text-green-400">
+                        <%= db.get("linkler").length %>
+                     </p>
+                  </div>
                </div>
+            </div>
+            <div class="mt-10 min-w-0 shadow-xs overflow-hidden" style="background-color:#1b2435">
+               <div class="p-4 flex items-center">
+                  <div class="p-3 rounded-full text-white text-4xl mr-4">
+                     <i class="fal fa-sign-in"></i>
+                  </div>
+                  <div>
+                     <p class="mb-2 text-sm font-medium text-white" style="font-size: 20px">
+                        Total Login
+                     </p>
+                     <p class="text-lg font-semibold text-green-400">
+                        <%=db.get("girisler")%>
+                     </p>
+                  </div>
+               </div>
+            </div>
+            <div class="mt-10 min-w-0 shadow-xs overflow-hidden" style="background-color:#1b2435">
+               <div class="p-4 flex items-center">
+                  <div class="p-3 rounded-full text-white text-4xl mr-4">
+                     <i class="fal fa-table-tennis"></i>
+                  </div>
+                  <div>
+                     <p class="mb-2 text-sm font-medium text-white" style="font-size: 20px">
+                        System Ping
+                     </p>
+                     <p class="text-lg font-semibold text-green-400">
+                        <%=Math.round(bot.ping)%>ms
+                     </p>
+                  </div>
+               </div>
+            </div>
          </div>
-         </form>
-      </div>
+         <div class="ml-auto mt-6">
+            &#160
+            <a href="/admin/links"><button class="focus:outline-none font-quicksand px-6 py-3 bg-discord transform transition duration-400 hover:bg-discord" style="border-radius:9px"><i class="fa fa-link"></i> All Links</button></a>
+         </div>
       </div>
       </div>
       <style>
@@ -84,7 +120,7 @@
          border-radius: 4px;
          background-color: #1b2435;
          -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
-         }  
+         }
       </style>
    </body>
 </html>

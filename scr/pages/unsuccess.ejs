@@ -10,8 +10,6 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
       <link rel="stylesheet" href="css/style.min.css">
       <title>Socioo | Free Forever</title>
-      <meta property="og:description" content="Checks the availability of your website in one minute intervals from 30 different locations on 6 continents.">
-      <meta name="description" content="Checks the availability of your website in one minute intervals from 30 different locations on 6 continents.">
    </head>
    <body class="text-white" style="background-color:#131a26;">
       <div class="w-full text-white bg-transparent">
@@ -45,30 +43,22 @@
             </nav>
          </div>
       </div>
-      <div class="container px-8 mt-1 mb-16 mx-auto w-full pt-16 pb-16">
-         <div class="md:grid md:grid-cols-2">
-            <div class="mt-2">
-               <p class="font-quicksand text-3xl text-white">Add Monitor</p>
+      <center>
+         <div class="container px-8 my-12 mx-auto w-full py-12">
+            <div class="my-12 md:grid mx-auto gap-3">
+               <div class="col-span-2">
+                  <p class="text-3xl font-bold"><a class="text-red-400">Something went wrong...</a></p>
+                  <p class="text-2xl mt-2 text-gray-500 font-quicksand"><a style="color:#efefef">To add, pay attention to the following;</a> <br>* The same link should not be found in the system, <br>* You must specify a valid link, <br>* You must not exceed your adding limit.</p>
+                  <br>
+                  <div class="ml-auto mt-2">
+                     <a href="/add"><button class="focus:outline-none font-quicksand px-6 py-3 bg transform transition duration-400 hover:bg-green-400" style="border-radius:9px"><i class="fa fa-plus-circle"></i> Try Again</button></a>
+                     &#160
+                     <a href="/discord"><button class="focus:outline-none font-quicksand px-6 py-3 bg-discord transform transition duration-400 hover:bg-discord" style="border-radius:9px"><i class="fab fa-discord"></i> Request Support</button></a>
+                  </div>
+               </div>
             </div>
          </div>
-         <div class="border-b border-gray-800 mt-2"></div>
-         <br>  
-         <div class="mx-auto p-6 rounded-lg bg-discord-dark-800" style="background-color:#1b2435">
-            <p class="text-md font-quicksand">Monitor Link</p>
-            <form method="POST" action="/add">
-               <input type="url" name="link" id="link" class="mt-2 input-1 px-3 focus:border rounded-md py-3 w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5" placeholder="https://" style="background-color:#131a26;" required>
-               <!--<p class="mt-4 text-md font-quicksand">Request Time (ms) <a class="text-1xl mt-2 text-gray-500 font-quicksand">required 2000</a></p>
-                  <input type="text" class="mt-2 input-1 px-3 focus:border bg-discord-dark-900 rounded-md py-3 w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5" placeholder="20000" style="background-color:#131a26;" disabled>-->
-               <div class="col-span-2">
-                  <center>
-                     <button type="submit" class="bg-green-400 focus:outline-none mt-7 hover:bg-green-500 transition duration-500 px-5 py-3 rounded-md text-center font-quicksand">Add Monitor</button>
-                  </center>
-               </div>
-         </div>
-         </form>
-      </div>
-      </div>
-      </div>
+      </center>
       <style>
          .flex-row{
          background-color:#1b2435
@@ -84,7 +74,7 @@
          border-radius: 4px;
          background-color: #1b2435;
          -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
-         }  
+         }
       </style>
    </body>
 </html>
